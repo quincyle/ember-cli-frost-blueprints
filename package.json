@@ -4,7 +4,7 @@
   "description": "The place for all the frosty blueprints",
   "scripts": {
     "lint": "lint-all-the-things",
-    "node-test": "istanbul cover _mocha -R tests",
+    "node-test": "istanbul cover _mocha -- --recursive tests/",
     "test": "npm run lint && npm run node-test"
   },
   "repository": {
@@ -21,8 +21,9 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chalk": "^1.1.3",
     "ember-cli": "~2.8.0",
-    "ember-test-utils": "^4.3.2",
+    "ember-test-utils": "^5.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   },
@@ -32,6 +33,5 @@
     "blueprints"
   ],
   "dependencies": {
-    "bluebird": "^3.4.7"
   }
 }

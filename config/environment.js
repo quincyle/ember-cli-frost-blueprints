@@ -1,5 +1,8 @@
 'use strict'
 
 module.exports = function (/* environment, appConfig */) {
-  return { }
+  return {
+    modulePrefix: 'dummy',
+    podModulePrefix: 'dummy/pods'
+  }
 }
