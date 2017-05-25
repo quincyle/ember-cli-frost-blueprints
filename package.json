@@ -1,0 +1,37 @@
+{
+  "name": "ember-cli-frost-blueprints",
+  "version": "0.0.0",
+  "description": "The place for all the frosty blueprints",
+  "scripts": {
+    "lint": "lint-all-the-things",
+    "node-test": "istanbul cover _mocha -R tests",
+    "test": "npm run lint && npm run node-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ciena-frost/ember-cli-frost-blueprints.git"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "author": "Adam Meadows (https://github.com/job13er)",
+  "contributors": [
+    "Michael Carroll (https://github.com/juwara0)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "ember-cli": "~2.8.0",
+    "ember-test-utils": "^4.3.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  },
+  "keywords": [
+    "ember-addon",
+    "frost",
+    "blueprints"
+  ],
+  "dependencies": {
+    "bluebird": "^3.4.7"
+  }
+}

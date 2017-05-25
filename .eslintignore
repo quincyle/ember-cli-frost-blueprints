@@ -1,0 +1,4 @@
+blueprints/*/files/**/*
+dist/**/*
+node_modules/**/*
+tmp/**/*

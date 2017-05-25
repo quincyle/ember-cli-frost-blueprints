@@ -1,0 +1,14 @@
+/dist
+/tests
+/tmp
+**/.gitkeep
+.editorconfig
+.ember-cli
+.eslintignore
+.eslintrc
+.gitignore
+.jshintrc
+.pullapprove.yml
+.watchmanconfig
+.travis.yml
+ember-cli-build.js
