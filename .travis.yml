@@ -1,0 +1,45 @@
+language: node_js
+sudo: false
+node_js:
+  - '6.9.1'
+  - 'stable'
+before_install:
+  - npm config set spin false
+  - npm install -g coveralls pr-bumper
+  - $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
+install:
+  - $(npm root -g)/pr-bumper/.travis/maybe-install.sh
+script:
+  - $(npm root -g)/pr-bumper/.travis/maybe-test.sh
+  - .travis/maybe-bump-version.sh
+after_success:
+  - .travis/maybe-publish-coverage.sh
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+env:
+  matrix:
+    - CXX=g++-4.8
+  fast_finish: true
+  allow_failures:
+    - node: 'stable'
+  global:
+    secure: laaYXbsBP/iNmP2JpJS+Lvy6F4RYmhsg8fneoS71qXZ+VMXCVq1aXBSyOAPMiP6wA0L8HHwV921IDILeC89oTeYa4xHbiY8C+d/vTMCCIauPaAJTh62DLFamThtKl6GikeIjXjhwHGFVAi3hO+jNyDSnrA0Rxafh/13goRq8iNImeaGgGslkgLIzaeg+T8Yd4lzOEFUoLO9r3N2FR3/MLXEmtemJK93+i/cDwORKfy8iJfnl2XaLiMsXGdjNR0wzjNcvTb4I8E6Wea/bPmV00P/oZMQAI8EgWhjeBMkYwzZdR32G+Qvs7dTvC3I5zHWlQ9Zqhq9X8HDgevD/KAYXT4ObDbeg3bNSDL070WwKa6H+Zk2hxel36krFORx0AKdGmibgccPIfqBuIts3Cpp0+AQuSgdxqI8+GaT45ZAUPYxXb1VoTsppCeGqbdkjCP7zBniF5T5e43rR/tLRsN+jkoZYnXZeULIRcUCv2a1E7dHhwZgCzvgZ2TwAFbu6gmekTsXYt/0OsXLHjNNTPaIyJlGvCdjcxURJqCfx2KdIKiE7/RVzmXqKcehuS1BUabWW5GKA4TBYAfQ5/d5D+PtwWNjap9AZWepdYGkNIQUUIbg20aeVCyA8i+4puC/cpq2T51DHi3zn7wrtVVGxEOgtT6ALEMYLdg/9IEuiNNhbwns=
+deploy:
+  provider: npm
+  email: npm.ciena@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: NHcU10u770aX/Hch2GKhaN1O9KaiZYVoAWKZwXkX+LySNlxOigY8g2ZWI3jejaVhrCyIp/vohd9N9GPnYZXkle5iJBMmqTqJ6b+7R+1TpHnupSlsx1Ld4A6wf1FwZKZEsxMc/bJBMBzXA54mIRyibUlfyX9lAsIaOuLEDtiOLciieXWqijAHmcyw6dAHmhZZml3xJRp9OOzTBs7aQ7J9tBTG9KgCRa3/AVfBN2eemQI1bwUQHV9sffecgmy8I5uj1hFYDZwP6cgh2esZuQgLDy5fVTuVHBht1mVOHQXRbXxBvnO1CSnvrKSIzd/HoYZlrPBBB2daKfVEtGa05gu7DhyJL+q8J06W3fRFSLOD5jIB0wArxp4dH37kGDWE05HN/pbU26SrCbBc9f8SQ6ZW8YxoYYDUWSUX40OBVd+k7DinR7Qb9mG04ewbWNYS5zxZrd7ozaw80iPMbsClEUa52I3QTq8ocm1+L8XIvSr3ZVTRn5RLbeWTwlk4jtBQU75b3MG3qi99r5EVaXnJXFxjm6ohLs7zkARbLBOnciBEsvxgPTidOSd/yaCBa6/J/R7DjjarCIV+vIgYwiiBSmTTTMJKdLZQtAl5HhWAbQLA1wd42ToGH5UBjVocNy8cWcBJQilinAjjZU88T/6+GzoevFbUfoEO0HbpsraxYeWoUsc=
+  on:
+    all_branches: true
+    node: '6.9.1'
+    tags: true
+after_deploy:
+  - .travis/publish-gh-pages.sh
+notifications:
+  slack:
+    secure: jbOc4tvpPo2cKXJS/U9kZQv/hCswsGmC1SWAQyQFEQNYKCyYZehHZRl4rr1CbhpZhhm9t87EOXUFOlu/js2LN4nkBZSzyFCAsxps+ooG97MEhrys3PQY/9gCRG5c1mhXAwgShEDZI2I7Sqcggubd0Ts87e9N9npsZA3KokwfQFmvf3d3Zx8igTkanAKXUMK4rmhMFxvBoGI6arImfx2MUuZhCm5JVXCoOGfQ0Dyju5EYNERE+s+pvhX+66846j+uOVwsf62JGIgRAX7yNBjBnNM+KHu87G6P0FntNp9M49xMLuBdGyG3zExBbk2XMZosRXPN3oApwGq8UahjFWZ3hu559eT/EYcFXx6hicprNnJH085C9YEHtJ1OiN4BRxY2QTbUXx6vM1IUZc1SN4MWCFP7vWKborzaXA6P/2JIkK756udytuaNC32YuG4RpRRbxspjv3bLbhMzysgPMKqFLj8mHv8m711wgBgqL2lepH7zpOaB2ITwW3JIqkFpqS8g6k+j1Ps7QuoDJ0xfjf2CEM1Lfz2AGWGzPAY0LUnFVF0iPHMyVaA6lmSW4rW9bsbkiY8C3QfNsgSKF4DnhwSLtTP+NB8S+n2CO42Lb42NXrKVavC8Kp1F4qZvPCUtWKlp5kt39AKiNhwtwHwb4QthxStsOE+iSVcEfuU5wAt2vjI=
