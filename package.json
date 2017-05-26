@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-frost-blueprints",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The place for all the frosty blueprints",
   "scripts": {
     "lint": "lint-all-the-things",
@@ -32,6 +32,5 @@
     "frost",
     "blueprints"
   ],
-  "dependencies": {
-  }
+  "dependencies": {}
 }
