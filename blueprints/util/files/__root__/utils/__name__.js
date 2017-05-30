@@ -1,5 +1,5 @@
 /**
- * Helper definition for the <%= dasherizedModuleName %> util
+ * Definition for the <%= dasherizedModuleName %> utility
  */
 
 export default function <%= camelizedModuleName %> () {
