@@ -10,8 +10,9 @@ const stringUtils = require('ember-cli-string-utils')
 module.exports = {
   description: 'Generates a frosty util unit test.',
   locals (options) {
+    const humanizedName = testInfo.humanize(options.entity.name)
     return {
-      friendlyTestName: `Unit / Utility / ${testInfo.name(options.entity.name)} /`,
+      friendlyTestName: `Unit / Utility / ${humanizedName} /`,
       dasherizedModulePrefix: stringUtils.dasherize(options.project.config().modulePrefix)
     }
   }
