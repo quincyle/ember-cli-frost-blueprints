@@ -16,10 +16,23 @@ module.exports = {
        * @returns {String} the path for the component being generated
        */
       path (options) {
-        if (options.pod) {
+        if (options.locals.route) {
+          return path.join(options.podPath, options.locals.route, '-components', options.dasherizedModuleName)
+        } else if (options.pod) {
           return path.join(options.podPath, options.locals.path, options.dasherizedModuleName)
         }
         return 'components'
+      },
+
+      /**
+       * @param {Object} options - the options for the ember generate command
+       * @returns {String} the name of the js file for the component being generated
+       */
+      name: function (options) {
+        if (options.pod || options.locals.route) {
+          return 'component'
+        }
+        return options.dasherizedModuleName
       }
     },
 

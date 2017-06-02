@@ -23,6 +23,17 @@ module.exports = {
       aliases: [
         {'no-path': ''}
       ]
+    },
+    {
+      name: 'route',
+      type: String,
+      default: '',
+      description: 'Route to nest component under (for use with ember-local-resolver) pods is assumed'
+    },
+    {
+      name: 'pro',
+      type: Boolean,
+      description: 'Skip instructional comments and examples (you know what you\'re doing)'
     }
   ],
 
@@ -34,6 +45,7 @@ module.exports = {
    */
   fileMapTokens () {
     return {
+      __name__: utils.component.fileMapTokens.name,
       __path__: utils.component.fileMapTokens.path,
 
       /**
@@ -41,7 +53,9 @@ module.exports = {
        * @returns {String} the path for the template of the component being generated
        */
       __templatepath__: function (options) {
-        if (options.pod) {
+        if (options.locals.route) {
+          return path.join(options.podPath, options.locals.route, '-components', options.dasherizedModuleName)
+        } else if (options.pod) {
           return path.join(options.podPath, options.locals.path, options.dasherizedModuleName)
         }
         return 'templates/components'
@@ -52,7 +66,7 @@ module.exports = {
        * @returns {String} the name of the template file for the component being generated
        */
       __templatename__: function (options) {
-        if (options.pod) {
+        if (options.pod || options.locals.route) {
           return 'template'
         }
         return options.dasherizedModuleName
@@ -78,8 +92,10 @@ module.exports = {
       }
     }
     return {
-      templatePath,
-      path: getPathOption(options)
+      route: options.route,
+      path: getPathOption(options),
+      pro: options.pro,
+      templatePath
     }
   },
 

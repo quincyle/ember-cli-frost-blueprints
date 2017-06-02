@@ -25,6 +25,12 @@ module.exports = {
         {'integration': 'integration'},
         {'unit': 'unit'}
       ]
+    },
+    {
+      name: 'route',
+      type: String,
+      default: '',
+      description: 'Route to nest component under (for use with ember-local-resolver) pods is assumed'
     }
   ],
 
@@ -36,6 +42,7 @@ module.exports = {
    */
   fileMapTokens () {
     return {
+      __name__: utils.component.fileMapTokens.name,
       __path__: utils.component.fileMapTokens.path,
 
       /**
@@ -67,6 +74,7 @@ module.exports = {
       capitalizedTestType: stringUtil.capitalize(testType),
       componentPathName,
       path: getPathOption(options),
+      route: options.route,
       testType
     }
   },
