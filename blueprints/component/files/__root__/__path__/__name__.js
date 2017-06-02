@@ -2,7 +2,7 @@
  * Component definition for the <%= dasherizedModuleName %> component
  */
 
-import computed, {readOnly} from 'ember-computed-decorators'
+<% if (pro) { %>// <%} else { %><% } %>import computed, {readOnly} from 'ember-computed-decorators'
 import {Component} from 'ember-frost-core'
 import {PropTypes} from 'ember-prop-types'
 
@@ -16,30 +16,34 @@ export default Component.extend({
   layout,
 
   // == PropTypes =============================================================
-
+<% if (pro) { %><% } else { %>
   /**
    * Properties for this component. Options are expected to be (potentially)
    * passed in to the component. State properties are *not* expected to be
    * passed in/overwritten.
-   */
+   */<% } %>
   propTypes: {
     // options
     foo: PropTypes.string
 
+    // callbacks
+
     // state
   },
-
-  /** @returns {Object} the default property values when not provided by consumer */
+<% if (pro) { %><% } else { %>
+  /** @returns {Object} the default property values when not provided by consumer */<% } %>
   getDefaultProps () {
     return {
       // options
+
+      // callbacks
 
       // state
     }
   },
 
   // == Computed Properties ===================================================
-
+<% if (pro) { %><% } else { %>
   @readOnly
   @computed('css')
   /**
@@ -54,7 +58,7 @@ export default Component.extend({
   cssPrefix (css) {
     return `${css}-`
   },
-
+<% } %>
   // == Functions =============================================================
 
   // == DOM Events ============================================================
