@@ -1,3 +1,8 @@
+# 1.2.0 (2017-06-02)
+ * **Added** `--pro` option to `ember g component` blueprint, which skips the explanatory comments and sample computed property
+ * **Added** `--route` option to `ember g component` and `ember g component-test` which will generate a component nested under a route (for use with `ember-local-resolver`). 
+
+
 # 1.1.0 (2017-06-02)
 
 * **Added** a `util-test` blueprint to make a more frosty unit test for a utility module.
