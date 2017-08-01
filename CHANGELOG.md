@@ -1,3 +1,8 @@
+# 1.2.1 (2017-08-01)
+* **Updated** to Ember CLI 2.12.3 in previous PR: https://github.com/ciena-frost/ember-cli-frost-blueprints/pull/13
+* **Updated** travis CI publish build to use pr-bumper version 2
+
+
 # 1.2.0 (2017-06-02)
  * **Added** `--pro` option to `ember g component` blueprint, which skips the explanatory comments and sample computed property
  * **Added** `--route` option to `ember g component` and `ember g component-test` which will generate a component nested under a route (for use with `ember-local-resolver`). 
