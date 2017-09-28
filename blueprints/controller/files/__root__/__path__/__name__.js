@@ -2,8 +2,7 @@
  * Controller definition for the <%= dasherizedModuleName %> controller
  */
 
-import Ember from 'ember'
-const {Controller} = Ember
+import Controller from '@ember/controller'
 
 export default Controller.extend({
 })

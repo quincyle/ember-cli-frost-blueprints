@@ -2,8 +2,8 @@
  * Unit test for the <%= dasherizedModuleName %> mixin
  */
 
+import EmberObject from '@ember/object'
 import {expect} from 'chai'
-import Ember from 'ember'
 import {afterEach, beforeEach, describe, it} from 'mocha'
 import sinon from 'sinon'
 
@@ -14,7 +14,7 @@ describe('Unit / Mixin / <%= dasherizedModuleName %> /', function () {
 
   beforeEach(function () {
     sandbox = sinon.sandbox.create()
-    subject = Ember.Object.extend(<%= classifiedModuleName %>Mixin).create()
+    subject = EmberObject.extend(<%= classifiedModuleName %>Mixin).create()
   })
 
   afterEach(function () {
