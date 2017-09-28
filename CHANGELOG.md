@@ -1,3 +1,7 @@
+# 2.0.0 (2017-09-28)
+* **Updated** to Ember CLI 2.15.1
+* **Updated** blueprints to Ember Javascript Modules API (https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md)
+
 # 1.2.1 (2017-08-01)
 * **Updated** to Ember CLI 2.12.3 in previous PR: https://github.com/ciena-frost/ember-cli-frost-blueprints/pull/13
 * **Updated** travis CI publish build to use pr-bumper version 2
