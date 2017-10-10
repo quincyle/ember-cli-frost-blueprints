@@ -27,8 +27,6 @@ env:
   allow_failures:
     - node: 'stable'
   global:
-    # See https://git.io/vdao3 for details.
-    - JOBS=1
     secure: laaYXbsBP/iNmP2JpJS+Lvy6F4RYmhsg8fneoS71qXZ+VMXCVq1aXBSyOAPMiP6wA0L8HHwV921IDILeC89oTeYa4xHbiY8C+d/vTMCCIauPaAJTh62DLFamThtKl6GikeIjXjhwHGFVAi3hO+jNyDSnrA0Rxafh/13goRq8iNImeaGgGslkgLIzaeg+T8Yd4lzOEFUoLO9r3N2FR3/MLXEmtemJK93+i/cDwORKfy8iJfnl2XaLiMsXGdjNR0wzjNcvTb4I8E6Wea/bPmV00P/oZMQAI8EgWhjeBMkYwzZdR32G+Qvs7dTvC3I5zHWlQ9Zqhq9X8HDgevD/KAYXT4ObDbeg3bNSDL070WwKa6H+Zk2hxel36krFORx0AKdGmibgccPIfqBuIts3Cpp0+AQuSgdxqI8+GaT45ZAUPYxXb1VoTsppCeGqbdkjCP7zBniF5T5e43rR/tLRsN+jkoZYnXZeULIRcUCv2a1E7dHhwZgCzvgZ2TwAFbu6gmekTsXYt/0OsXLHjNNTPaIyJlGvCdjcxURJqCfx2KdIKiE7/RVzmXqKcehuS1BUabWW5GKA4TBYAfQ5/d5D+PtwWNjap9AZWepdYGkNIQUUIbg20aeVCyA8i+4puC/cpq2T51DHi3zn7wrtVVGxEOgtT6ALEMYLdg/9IEuiNNhbwns=
 deploy:
   provider: npm
