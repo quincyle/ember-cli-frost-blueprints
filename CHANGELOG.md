@@ -1,3 +1,6 @@
+# 2.0.1 (2017-10-10)
+* **Upgraded** to Ember CLI 2.16.1
+
 # 2.0.0 (2017-09-28)
 * **Updated** to Ember CLI 2.15.1
 * **Updated** blueprints to Ember Javascript Modules API (https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md)
