@@ -4,6 +4,8 @@
 
 We apologize for this change. Unfortunately, due to the internal needs of our organization this became a required action.
 
+The 2.16.1 changes are now located in the `ember-cli-2.16.1` branch and will hopefully be contained in a versioned release again in the future.
+
 
 # 2.0.1 (2017-10-10)
 * **Upgraded** to Ember CLI 2.16.1
