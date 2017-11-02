@@ -1,8 +1,8 @@
 /**
  * Mixin definition for the <%= dasherizedModuleName %> mixin
  */
-
-import Mixin from '@ember/object/mixin'
+import Ember from 'ember'
+const {Mixin} = Ember
 
 export default Mixin.create({
 })
