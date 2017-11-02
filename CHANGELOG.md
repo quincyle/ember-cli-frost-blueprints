@@ -1,3 +1,10 @@
+# 4.0.0 (2017-11-02)
+
+## WARNING: THIS REVERTS EMBER CLI 2.16.1 BACK TO 2.12.3
+
+We apologize for this change. Unfortunately, due to the internal needs of our organization this became a required action.
+
+
 # 3.0.0 (2017-11-02)
 
 ## WARNING: THIS REVERTS EMBER CLI 2.16.1 BACK TO 2.12.3
