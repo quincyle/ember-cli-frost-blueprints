@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
-    "chalk": "^1.1.3",
+    "chalk": "^2.3.0",
     "ember-cli": "2.12.3",
     "ember-test-utils": "^5.0.0",
     "istanbul": "^0.4.5",
