@@ -27,7 +27,7 @@
     "ember-cli": "2.12.3",
     "ember-cli-chai": "0.4.3",
     "ember-cli-mocha": "0.14.4",
-    "ember-frost-test": "^3.1.0",
+    "ember-frost-test": "^4.0.0",
     "ember-hook": "1.4.2",
     "ember-sinon": "^0.7.0",
     "ember-test-utils": "^8.1.0",
