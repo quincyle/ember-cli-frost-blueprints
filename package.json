@@ -4,7 +4,7 @@
   "description": "The place for all the frosty blueprints",
   "scripts": {
     "lint": "lint-all-the-things",
-    "node-test": "istanbul cover _mocha -- --recursive tests/**/*-test.js",
+    "node-test": "istanbul cover _mocha -- --recursive tests/",
     "afternode-test": "find . -type d -empty -delete",
     "test": "npm run lint && npm run node-test"
   },
