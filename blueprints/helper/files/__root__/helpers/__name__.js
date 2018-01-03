@@ -4,7 +4,7 @@
 import Ember from 'ember'
 const {Helper} = Ember
 
-export function <%= camelizedModuleName %> (params/*, hash*/) {
+export function <%= camelizedModuleName %> (params /* , hash */) {
   return params
 }
 
