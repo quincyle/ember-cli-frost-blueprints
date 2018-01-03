@@ -1,3 +1,7 @@
+# 5.0.0 (2017-12-29)
+
+We experienced an issue with our release version strategy and this release should not have occurred.  It was supposed to be a patch for this PR: https://github.com/ciena-frost/ember-cli-frost-blueprints/pull/20.  `5.0.1` will be released to get everything back on track.
+
 # 4.0.0 (2017-11-02)
 
 ## WARNING: THIS REVERTS EMBER CLI 2.16.1 BACK TO 2.12.3
