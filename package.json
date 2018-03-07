@@ -24,7 +24,7 @@
     "chai": "^3.5.0",
     "chalk": "^2.3.0",
     "ember-cli": "2.12.3",
-    "ember-test-utils": "^8.1.0",
+    "ember-test-utils": "^8.1.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   },
