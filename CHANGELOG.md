@@ -1,3 +1,13 @@
+# 5.0.2 (2018-03-07)
+* **Updated** pull request template
+* **Added** issue template
+* **Updated** to `pr-bumper` version `3`
+* **Updated** to node 8
+* **Added** slack integration
+* **Updated** `ember-test-utils` to `^8.1.1`
+* **Removed** ignoring of `package-lock` file
+* **Added** `package-lock.json` file
+
 # 5.0.1 (2018-01-03)
 
 Please add a description of your change here, it will be automatically prepended to the `CHANGELOG.md` file.
