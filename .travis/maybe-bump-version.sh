@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ "$TRAVIS_NODE_VERSION" != "8.1.2" ]
+if [[ ! "${PUBLISH_NODE_VERSION:-8.1.2}" =~ ^$TRAVIS_NODE_VERSION ]]
 then
-  echo "Skipping version bump for TRAVIS_NODE_VERSION ${TRAVIS_NODE_VERSION}"
+  echo "Skipping pr-bumper bump step for TRAVIS_NODE_VERSION [${TRAVIS_NODE_VERSION}]"
   exit 0
 fi
 
