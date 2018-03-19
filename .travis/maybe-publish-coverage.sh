@@ -14,10 +14,4 @@ then
   exit 0
 fi
 
-if [ "$EMBER_TRY_SCENARIO" != "ember-default" ]
-then
-  echo "Skipping pr-bumper coverage publish step for EMBER_TRY_SCENARIO [${EMBER_TRY_SCENARIO}]"
-  exit 0
-fi
-
 cat coverage/lcov.info | coveralls
