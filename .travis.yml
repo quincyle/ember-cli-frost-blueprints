@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 node_js:
-  - $PUBLISH_NODE_VERSION
+  - '8.6.0'
 
 before_install:
   - npm config set spin false
@@ -38,7 +38,7 @@ deploy:
     secure: NHcU10u770aX/Hch2GKhaN1O9KaiZYVoAWKZwXkX+LySNlxOigY8g2ZWI3jejaVhrCyIp/vohd9N9GPnYZXkle5iJBMmqTqJ6b+7R+1TpHnupSlsx1Ld4A6wf1FwZKZEsxMc/bJBMBzXA54mIRyibUlfyX9lAsIaOuLEDtiOLciieXWqijAHmcyw6dAHmhZZml3xJRp9OOzTBs7aQ7J9tBTG9KgCRa3/AVfBN2eemQI1bwUQHV9sffecgmy8I5uj1hFYDZwP6cgh2esZuQgLDy5fVTuVHBht1mVOHQXRbXxBvnO1CSnvrKSIzd/HoYZlrPBBB2daKfVEtGa05gu7DhyJL+q8J06W3fRFSLOD5jIB0wArxp4dH37kGDWE05HN/pbU26SrCbBc9f8SQ6ZW8YxoYYDUWSUX40OBVd+k7DinR7Qb9mG04ewbWNYS5zxZrd7ozaw80iPMbsClEUa52I3QTq8ocm1+L8XIvSr3ZVTRn5RLbeWTwlk4jtBQU75b3MG3qi99r5EVaXnJXFxjm6ohLs7zkARbLBOnciBEsvxgPTidOSd/yaCBa6/J/R7DjjarCIV+vIgYwiiBSmTTTMJKdLZQtAl5HhWAbQLA1wd42ToGH5UBjVocNy8cWcBJQilinAjjZU88T/6+GzoevFbUfoEO0HbpsraxYeWoUsc=
   on:
     all_branches: true
-    node: $PUBLISH_NODE_VERSION
+    node: '8.6.0'
     tags: true
 notifications:
   slack:
