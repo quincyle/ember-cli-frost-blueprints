@@ -1,33 +1,32 @@
 language: node_js
 sudo: false
 node_js:
-  - '8.6.0'
-
+- 8.6.0
 before_install:
-  - npm config set spin false
-  - npm install -g coveralls pr-bumper@^3.7.0 ciena-devops@^1.0.0
-  - $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
+- npm config set spin false
+- npm install -g coveralls pr-bumper@^3.7.0 ciena-devops@^1.0.0
+- "$(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh"
 install:
-  - $(npm root -g)/pr-bumper/.travis/maybe-install.sh
+- "$(npm root -g)/pr-bumper/.travis/maybe-install.sh"
 script:
-  - $(npm root -g)/pr-bumper/.travis/maybe-test.sh
-  - .travis/maybe-bump-version.sh
+- "$(npm root -g)/pr-bumper/.travis/maybe-test.sh"
+- ".travis/maybe-bump-version.sh"
 after_success:
-  - .travis/maybe-publish-coverage.sh
+- ".travis/maybe-publish-coverage.sh"
 after_deploy:
-  - $(npm root -g)/ciena-devops/scripts/slack/incoming-webhooks/send-message.sh
+- "$(npm root -g)/ciena-devops/scripts/slack/incoming-webhooks/send-message.sh"
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8
 env:
   matrix:
-    - CXX=g++-4.8
+  - CXX=g++-4.8
   fast_finish: true
   allow_failures:
-    - node: 'stable'
+  - node: stable
   global:
     secure: laaYXbsBP/iNmP2JpJS+Lvy6F4RYmhsg8fneoS71qXZ+VMXCVq1aXBSyOAPMiP6wA0L8HHwV921IDILeC89oTeYa4xHbiY8C+d/vTMCCIauPaAJTh62DLFamThtKl6GikeIjXjhwHGFVAi3hO+jNyDSnrA0Rxafh/13goRq8iNImeaGgGslkgLIzaeg+T8Yd4lzOEFUoLO9r3N2FR3/MLXEmtemJK93+i/cDwORKfy8iJfnl2XaLiMsXGdjNR0wzjNcvTb4I8E6Wea/bPmV00P/oZMQAI8EgWhjeBMkYwzZdR32G+Qvs7dTvC3I5zHWlQ9Zqhq9X8HDgevD/KAYXT4ObDbeg3bNSDL070WwKa6H+Zk2hxel36krFORx0AKdGmibgccPIfqBuIts3Cpp0+AQuSgdxqI8+GaT45ZAUPYxXb1VoTsppCeGqbdkjCP7zBniF5T5e43rR/tLRsN+jkoZYnXZeULIRcUCv2a1E7dHhwZgCzvgZ2TwAFbu6gmekTsXYt/0OsXLHjNNTPaIyJlGvCdjcxURJqCfx2KdIKiE7/RVzmXqKcehuS1BUabWW5GKA4TBYAfQ5/d5D+PtwWNjap9AZWepdYGkNIQUUIbg20aeVCyA8i+4puC/cpq2T51DHi3zn7wrtVVGxEOgtT6ALEMYLdg/9IEuiNNhbwns=
 deploy:
@@ -35,10 +34,10 @@ deploy:
   email: npm.ciena@gmail.com
   skip_cleanup: true
   api_key:
-    secure: NHcU10u770aX/Hch2GKhaN1O9KaiZYVoAWKZwXkX+LySNlxOigY8g2ZWI3jejaVhrCyIp/vohd9N9GPnYZXkle5iJBMmqTqJ6b+7R+1TpHnupSlsx1Ld4A6wf1FwZKZEsxMc/bJBMBzXA54mIRyibUlfyX9lAsIaOuLEDtiOLciieXWqijAHmcyw6dAHmhZZml3xJRp9OOzTBs7aQ7J9tBTG9KgCRa3/AVfBN2eemQI1bwUQHV9sffecgmy8I5uj1hFYDZwP6cgh2esZuQgLDy5fVTuVHBht1mVOHQXRbXxBvnO1CSnvrKSIzd/HoYZlrPBBB2daKfVEtGa05gu7DhyJL+q8J06W3fRFSLOD5jIB0wArxp4dH37kGDWE05HN/pbU26SrCbBc9f8SQ6ZW8YxoYYDUWSUX40OBVd+k7DinR7Qb9mG04ewbWNYS5zxZrd7ozaw80iPMbsClEUa52I3QTq8ocm1+L8XIvSr3ZVTRn5RLbeWTwlk4jtBQU75b3MG3qi99r5EVaXnJXFxjm6ohLs7zkARbLBOnciBEsvxgPTidOSd/yaCBa6/J/R7DjjarCIV+vIgYwiiBSmTTTMJKdLZQtAl5HhWAbQLA1wd42ToGH5UBjVocNy8cWcBJQilinAjjZU88T/6+GzoevFbUfoEO0HbpsraxYeWoUsc=
+    secure: N598rOpXkWfFInRYD7GbA4tFeKmB56c1BLYEOGgsXmUSnGPaDM145iL/HJLB+Qr4kz76/ZNqgHjJqy8mD6a9obzNKW3BkeEAcrAC0/k/3DSHQ3OYUy+Uw8843JKXuF/lBG7jHPJ7JeWuPi4opm/7z1M6V37jnecueomYL2behMqeICPzuqrjS1ExsRH4GevPstAXlFoZ5HvOEip/B5kTTDLki4lEsOvR944dUBnyjLTGTWp2Px8R/NkeiQ8ONj7k6NFpE81yOH1rRlfqDt4Y7eeYgLnaoSaJRL7olWeH6BlJUNLBoxPT23HjJbOhlyiERYTCkLl6xYQ7JS61key0YBoQRW+LCZgr0P5Yk8Ep9+4/Nu0cjysYkakI7YGPmXjur5EThEWa9N1Vug/Ixd1x18IVgzCYLy23DsZYQnrwUn1yh2sDdyPPOBh4dexwWwGNKruH8vpoO8nhtryksTr06XvmW4gHyHpvo7Jx/2L4fyvZTecHBxPfBNuCBb+tQ9Q7ffqdm96MwGGCF6zt1sxJJFo46Ih1kVDb+ASoxAhkkMc/sedNxS5YuG7BdFkRUsyjxNRAETxn2xpi9vL9ChYMp22zXLkLyRuFmNaPLTlSQjUPWp+i6xNFC9zmcWbKRBg4pt09w/Eq0PfjRhF3fhRXw8Rin/oMtKeVnJeqsrh1jvE=
   on:
     all_branches: true
-    node: '8.6.0'
+    node: 8.6.0
     tags: true
 notifications:
   slack:
